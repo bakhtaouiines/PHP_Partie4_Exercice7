@@ -1,17 +1,18 @@
 <?php
-    function person($age,$genre) : string
+    declare(strict_types = 1);
+    function person(int $age, string $genre) : string
     {
-        $ageString = "Vous êtes majeur";
+        $ageString = 'vous êtes majeur';
         if ($age <18){
-            $ageString = "vous êtes mineur";
+            $ageString = 'vous êtes mineur';
         }
-        $genreString = "homme";
+        $genreString = 'homme';
         $accord = "";
-        if ($genre === "femme"){
-            $genreString = "femme";
-            $accord = "e";
+        if ($genre == 'femme'){
+            $genreString = 'femme';
+            $accord = 'e';
         }
-        return("Vous êtes un".$accord. " " .$genreString." et " .$ageString. $accord);
+        return 'Vous êtes un '. $accord . ' ' . $genreString . ' et ' . $ageString . $accord;
     }
 ?>
 <!DOCTYPE html>
@@ -24,6 +25,6 @@
 </head>
 <body>
     <h1>Exercice 7 Partie 4 : Les fonctions PHP</h1>
-        <p><?=person(15,"femme");?></p>
+        <p><?=person(89,'femme');?></p>
 </body>
 </html>
